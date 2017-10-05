@@ -21,7 +21,7 @@ public class Climb extends Command {
 	@Override
 	protected void execute() {
 		//get the joystick value and climb
-		double joystickValue = Robot.oi.getXbox().getRawAxis(5);
+		double joystickValue = Robot.oi.getXbox1().getRawAxis(5);
 		Robot.climber.climb(joystickValue);
 	}
 	//Make this return true when this Command no longer needs to run execute()

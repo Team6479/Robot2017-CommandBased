@@ -15,8 +15,8 @@ public class Climber extends Subsystem {
 	}
 	public void climb(double speed) {
 		//never go in reverse
-		speed = Math.abs(speed);
-		climber.set(speed);
+		double robotSpeed = Math.abs(speed);
+		climber.set(robotSpeed);
 	}
 }
 
