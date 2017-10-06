@@ -12,7 +12,7 @@ public class GearYControl extends Command {
     public GearYControl() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.gycont);
+    		requires(Robot.gycont);
     }
 
     // Called just before this Command runs the first time
@@ -21,11 +21,11 @@ public class GearYControl extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	boolean buttonPressed = Robot.oi.getXboxAssist().getRawButton(6);
+    		boolean buttonPressed = Robot.oi.getXboxAssist().getRawButton(6);
     	
-    	if (buttonPressed) {
+    			if (buttonPressed) {
     		
-    	}
+    			}
     }
 
     // Make this return true when this Command no longer needs to run execute()

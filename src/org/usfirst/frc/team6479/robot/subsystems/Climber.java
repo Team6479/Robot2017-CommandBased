@@ -10,8 +10,9 @@ public class Climber extends Subsystem {
 
 	private Victor climber = new Victor(RobotMap.climber);
 
+	//no default
 	public void initDefaultCommand() {
-		setDefaultCommand(new RacingDrive());
+		
 	}
 	public void climb(double speed) {
 		//never go in reverse
