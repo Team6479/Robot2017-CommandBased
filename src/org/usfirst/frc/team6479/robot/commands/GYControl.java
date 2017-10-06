@@ -7,12 +7,12 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class TurnGWheels extends Command {
+public class GYControl extends Command {
 
-    public TurnGWheels() {
+    public GYControl() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.gwheels);
+    	requires(Robot.gycont);
     }
 
     // Called just before this Command runs the first time
@@ -21,7 +21,11 @@ public class TurnGWheels extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	boolean buttonValue = Robot.oi.getXboxAssist().getRawButton(5);
+    	boolean buttonPressed = Robot.oi.getXboxAssist().getRawButton(6);
+    	
+    	if (buttonPressed) {
+    		
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()

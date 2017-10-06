@@ -4,9 +4,6 @@ import org.usfirst.frc.team6479.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-/**
- *
- */
 public class Climb extends Command {
 
 	public Climb() {
@@ -21,7 +18,7 @@ public class Climb extends Command {
 	@Override
 	protected void execute() {
 		//get the joystick value and climb
-		double joystickValue = Robot.oi.getXbox1().getRawAxis(5);
+		double joystickValue = Robot.oi.getXboxDriver().getRawAxis(5);
 		Robot.climber.climb(joystickValue);
 	}
 	//Make this return true when this Command no longer needs to run execute()
