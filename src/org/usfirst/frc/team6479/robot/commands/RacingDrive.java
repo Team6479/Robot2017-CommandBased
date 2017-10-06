@@ -17,12 +17,12 @@ public class RacingDrive extends Command {
 	@Override
 	protected void execute() {
 		//racing drive computation
-		double left = Robot.oi.getXbox1().getRawAxis(2);
-		double right = Robot.oi.getXbox1().getRawAxis(3);
+		double left = Robot.oi.getXboxDriver().getRawAxis(2);
+		double right = Robot.oi.getXboxDriver().getRawAxis(3);
 		// each trigger has an axis range of 0 to 1
 		// to make left trigger reverse, subtract axis value from right trigger
 		double throttle = right - left;
-		double turn = Robot.oi.getXbox1().getRawAxis(0) * -1;
+		double turn = Robot.oi.getXboxDriver().getRawAxis(0) * -1;
 		Robot.drivetrain.drive(turn, throttle);
 	}
 	//Make this return true when this Command no longer needs to run execute()
