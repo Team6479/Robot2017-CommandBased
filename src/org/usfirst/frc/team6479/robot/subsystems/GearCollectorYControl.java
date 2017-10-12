@@ -2,6 +2,7 @@ package org.usfirst.frc.team6479.robot.subsystems;
 
 import org.usfirst.frc.team6479.robot.RobotMap;
 import org.usfirst.frc.team6479.robot.commands.GearYControl;
+import org.usfirst.frc.team6479.robot.commands.RacingDrive;
 
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -24,9 +25,14 @@ public class GearCollectorYControl extends Subsystem {
 	
 	@Override
 	protected void initDefaultCommand() {
-		//no defualt
+		setDefaultCommand(new GearYControl());
 		
 	}
+	//what psoiton it is
+	public boolean isUp() {
+		return pos == Position.UP;
+	}
+	
 	//lift the gear collector up
 	public void pickUp() {
 		//if its up, dont do it
