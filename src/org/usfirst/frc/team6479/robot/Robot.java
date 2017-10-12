@@ -9,6 +9,7 @@ import org.usfirst.frc.team6479.robot.subsystems.GearCollectorYControl;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import robotLogger.RobotLogger;
 
 public class Robot extends IterativeRobot {
 
@@ -17,6 +18,7 @@ public class Robot extends IterativeRobot {
 	public static Climber climber;
 	public static GearCollectorWheels gwheels;
 	public static GearCollectorYControl gycont;
+	public RobotLogger logger;
 
 	@Override
 	public void robotInit() {
@@ -25,7 +27,8 @@ public class Robot extends IterativeRobot {
 		climber = new Climber();
 		gwheels = new GearCollectorWheels();
 		gycont = new GearCollectorYControl();
-		
+		//TODO: working on this
+		//logger = RobotLogger.getInstance();
 	}
 	@Override
 	public void disabledInit() {
