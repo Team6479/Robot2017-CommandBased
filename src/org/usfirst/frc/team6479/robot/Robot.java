@@ -22,11 +22,11 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void robotInit() {
-		oi = new OI();
 		drivetrain = new Drivetrain();
 		climber = new Climber();
 		gwheels = new GearCollectorWheels();
 		gycont = new GearCollectorYControl();
+		oi = new OI();
 		//TODO: working on this
 		//logger = RobotLogger.getInstance();
 	}
