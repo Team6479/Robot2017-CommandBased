@@ -21,5 +21,10 @@ public class RobotMap {
 	//Gear Collector
 	public static int wheels = 5;
 	public static int yControl = 0;
+	
+	
+	public static final String AUTO_FILE1 = "/home/lvuser/autonomous1";
+	public static final String AUTO_FILE2 = "/home/lvuser/autonomous2";
+	public static final String AUTO_FILE3 = "/home/lvuser/autonomous3";
 }
  
