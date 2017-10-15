@@ -9,6 +9,7 @@ import org.usfirst.frc.team6479.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.SpeedController;
 
+//TODO needs edting to make work with mutliple auto routines
 public class AutoLogger {
 	
 	private SpeedController[] allMotorControllers;
