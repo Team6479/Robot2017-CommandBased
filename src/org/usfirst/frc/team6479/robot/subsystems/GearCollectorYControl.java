@@ -36,6 +36,7 @@ public class GearCollectorYControl extends Subsystem {
 	//lift the gear collector up
 	public void pickUp() {
 		//if its up, dont do it
+		spark.set(0.4); //test
 		if(pos == Position.UP) {
 			// TODO: pick up code
 			

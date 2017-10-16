@@ -27,7 +27,7 @@ public class Robot extends IterativeRobot {
 		gwheels = new GearCollectorWheels();
 		gycont = new GearCollectorYControl();
 		oi = new OI();
-		//logging utiltiy
+		//logging utility
 		//logger = RobotLogger.getInstance();
 	}
 	@Override

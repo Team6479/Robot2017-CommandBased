@@ -12,6 +12,7 @@ public class GearCollectorWheels extends Subsystem {
 	
 	public GearCollectorWheels(){
 		spike = new Relay(RobotMap.wheels);
+		
 	}
 	
 	@Override

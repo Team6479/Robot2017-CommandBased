@@ -2,6 +2,7 @@ package org.usfirst.frc.team6479.robot.commands;
 
 import org.usfirst.frc.team6479.robot.Robot;
 
+import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -17,6 +18,7 @@ public class TurnGearWheels extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.gwheels.set(true);
     }
 
     // Called repeatedly when this Command is scheduled to run
