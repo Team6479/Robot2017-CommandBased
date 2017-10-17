@@ -4,6 +4,7 @@ import org.usfirst.frc.team6479.robot.RobotMap;
 import org.usfirst.frc.team6479.robot.commands.TurnGearWheels;
 
 import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.Relay.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class GearCollectorWheels extends Subsystem {
@@ -12,12 +13,11 @@ public class GearCollectorWheels extends Subsystem {
 	
 	public GearCollectorWheels(){
 		spike = new Relay(RobotMap.wheels);
-		
+		spike.set(Value.kOff);
 	}
 	
 	@Override
 	protected void initDefaultCommand() {
-		// TODO Auto-generated method stub
 		setDefaultCommand(new TurnGearWheels());
 	}
 	
@@ -28,6 +28,10 @@ public class GearCollectorWheels extends Subsystem {
 		else {
 			spike.set(Relay.Value.kOff);
 		}
+	}
+	public void set(Relay.Value var)
+	{
+		spike.set(var);
 	}
 	
 	
