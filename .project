@@ -3,6 +3,7 @@
 	<name>Robot2017-CommandBased</name>
 	<comment></comment>
 	<projects>
+		<project>RobotLogger</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

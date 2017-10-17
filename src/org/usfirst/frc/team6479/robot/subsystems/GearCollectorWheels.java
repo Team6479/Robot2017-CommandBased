@@ -5,15 +5,16 @@ import org.usfirst.frc.team6479.robot.commands.TurnGearWheels;
 
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.Relay.Value;
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class GearCollectorWheels extends Subsystem {
 	
-	private Relay spike;
+	private Spark spark;
 	
-	public GearCollectorWheels(){
-		spike = new Relay(RobotMap.wheels);
-		spike.set(Value.kOff);
+	public GearCollectorWheels() {
+		spark = new Spark(RobotMap.wheels);
+		spark.set(0);
 	}
 	
 	@Override
@@ -21,17 +22,9 @@ public class GearCollectorWheels extends Subsystem {
 		setDefaultCommand(new TurnGearWheels());
 	}
 	
-	public void set(boolean btnpress) {
-		if (btnpress) {
-			spike.set(Relay.Value.kOn);
-		}
-		else {
-			spike.set(Relay.Value.kOff);
-		}
-	}
-	public void set(Relay.Value var)
+	public void set(double var)
 	{
-		spike.set(var);
+		spark.set(var);
 	}
 	
 	

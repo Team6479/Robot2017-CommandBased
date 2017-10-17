@@ -27,7 +27,6 @@ public class GearYControl extends Command {
 		//this is a test below
 		if(buttonPressed){
 			Robot.gycont.pickUp();
-			Robot.gwheels.set(false);
 		}
 		
 		if (buttonPressed && Robot.gycont.isUp()) {

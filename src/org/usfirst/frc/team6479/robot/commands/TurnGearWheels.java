@@ -10,34 +10,49 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class TurnGearWheels extends Command {
 
-    public TurnGearWheels() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
-    	requires(Robot.gwheels);
-    }
+	private int counter;
 
-    // Called just before this Command runs the first time
-    protected void initialize() {
-    	Robot.gwheels.set(true);
-    }
+	public TurnGearWheels() {
+		// Use requires() here to declare subsystem dependencies
+		// eg. requires(chassis);
+		requires(Robot.gwheels);
+	}
 
-    // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
-    		boolean buttonValue = Robot.oi.getXboxAssist().getRawButton(5);
-    		Robot.gwheels.set(buttonValue);
-    }
+	// Called just before this Command runs the first time
+	protected void initialize() {
+		counter = 0;
+	}
 
-    // Make this return true when this Command no longer needs to run execute()
-    protected boolean isFinished() {
-        return false;
-    }
+	// Called repeatedly when this Command is scheduled to run
+	protected void execute() {
+		// Checks for Left Button
+		boolean lButtonValue = Robot.oi.getXboxAssist().getRawButton(5);
+		// Checks for Right Button
+		boolean rButtonValue = Robot.oi.getXboxAssist().getRawButton(6);
 
-    // Called once after isFinished returns true
-    protected void end() {
-    }
+		if (counter == 20) {
+			if (lButtonValue) {
+				Robot.gwheels.set(1);
+			} 
+			else if (rButtonValue) {
+				Robot.gwheels.set(-1);
+			}
+			counter = 0;
+		}
+		counter++;
+	}
 
-    // Called when another command which requires one or more of the same
-    // subsystems is scheduled to run
-    protected void interrupted() {
-    }
+	// Make this return true when this Command no longer needs to run execute()
+	protected boolean isFinished() {
+		return false;
+	}
+
+	// Called once after isFinished returns true
+	protected void end() {
+	}
+
+	// Called when another command which requires one or more of the same
+	// subsystems is scheduled to run
+	protected void interrupted() {
+	}
 }
