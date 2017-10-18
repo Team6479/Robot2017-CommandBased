@@ -16,11 +16,13 @@ public class TurnGearWheels extends Command {
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
 		requires(Robot.gwheels);
+		
+		//Initalization of variables
+		counter = 0;
 	}
 
 	// Called just before this Command runs the first time
 	protected void initialize() {
-		counter = 0;
 	}
 
 	// Called repeatedly when this Command is scheduled to run
@@ -31,11 +33,24 @@ public class TurnGearWheels extends Command {
 		boolean rButtonValue = Robot.oi.getXboxAssist().getRawButton(6);
 
 		if (counter == 20) {
+			//If Left Button is pressed 
 			if (lButtonValue) {
-				Robot.gwheels.set(1);
+				boolean isOn = false;
+				if (!isOn) {
+					Robot.gwheels.set(1);
+				}
+				else{
+					Robot.gwheels.set(0);
+				}
 			} 
 			else if (rButtonValue) {
-				Robot.gwheels.set(-1);
+				boolean isOn = false;
+				if (!isOn) {
+					Robot.gwheels.set(-1);
+				}
+				else{
+					Robot.gwheels.set(0);
+				}
 			}
 			counter = 0;
 		}

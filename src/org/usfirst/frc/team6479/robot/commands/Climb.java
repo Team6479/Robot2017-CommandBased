@@ -21,7 +21,7 @@ public class Climb extends Command {
 		{
 			//get the joystick value and climb
 			double joystickValue = Robot.oi.getXboxDriver().getRawAxis(5);
-			Robot.climber.climb(joystickValue);
+			Robot.climber.climb(Math.abs(joystickValue));
 		}
 	}
 	//Make this return true when this Command no longer needs to run execute()
