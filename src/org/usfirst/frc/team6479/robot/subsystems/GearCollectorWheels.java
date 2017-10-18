@@ -6,6 +6,7 @@ import org.usfirst.frc.team6479.robot.commands.TurnGearWheels;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.Relay.Value;
 import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class GearCollectorWheels extends Subsystem {
@@ -26,6 +27,8 @@ public class GearCollectorWheels extends Subsystem {
 	{
 		spark.set(var);
 	}
-	
+	public SpeedController getMotor() {
+		return spark;
+	}
 	
 }  

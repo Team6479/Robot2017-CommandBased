@@ -9,9 +9,9 @@ import org.usfirst.frc.team6479.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.SpeedController;
 
-//TODO needs edting to make work with mutliple auto routines
 public class AutoLogger {
 	
+	private static final String AUTO_FOLDER = "/home/lvuser/autonomous/";
 	private SpeedController[] allMotorControllers;
 	private PrintWriter write;
 	private FileReader read;
@@ -19,10 +19,10 @@ public class AutoLogger {
 		this.allMotorControllers = allMotorControllers;
 	}
 	//return true if successful
-	public boolean openForWrite() {
+	public boolean openForWrite(String filename) {
 		try 
 		{
-			write = new PrintWriter(RobotMap.AUTO_FILE1);
+			write = new PrintWriter(AUTO_FOLDER + filename);
 		} 
 		catch (FileNotFoundException e) 
 		{
@@ -32,10 +32,10 @@ public class AutoLogger {
 		return true;
 	}
 	//return true if successful
-	public boolean openForRead() {
+	public boolean openForRead(String filename) {
 		try 
 		{
-			read = new FileReader(RobotMap.AUTO_FILE1);
+			read = new FileReader(AUTO_FOLDER + filename);
 		} 
 		catch (FileNotFoundException e) 
 		{

@@ -6,6 +6,7 @@ import org.usfirst.frc.team6479.robot.customwpi.CustomDrive;
 import org.usfirst.frc.team6479.robot.customwpi.MultiSpeedController;
 
 import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Drivetrain extends Subsystem {
@@ -25,5 +26,11 @@ public class Drivetrain extends Subsystem {
 	}
 	public void drive(double turn, double throttle) {
 		drive.arcadeDrive(turn, throttle);
+	}
+	public SpeedController getLeftSideMotors() {
+		return leftSide;
+	}
+	public SpeedController getRightSideMotors() {
+		return rightSide;
 	}
 }

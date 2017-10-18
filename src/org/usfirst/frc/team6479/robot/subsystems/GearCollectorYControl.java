@@ -5,6 +5,7 @@ import org.usfirst.frc.team6479.robot.commands.GearYControl;
 import org.usfirst.frc.team6479.robot.commands.RacingDrive;
 
 import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class GearCollectorYControl extends Subsystem {
@@ -53,6 +54,9 @@ public class GearCollectorYControl extends Subsystem {
 			//after picked up, set position to UP
 			pos = Position.DOWN;
 		}
+	}
+	public SpeedController getMotor() {
+		return spark;
 	}
 	
 }
