@@ -27,7 +27,8 @@ public class GearYControl extends Command {
 
 		//if the button is pressed, pick up the gear collector for 1 second
 		if (buttonPressed) {
-			Scheduler.getInstance().add(new GearPickUp(1));
+			//Scheduler.getInstance().add(new GearPickUp(0.18));
+			Scheduler.getInstance().add(new GearPickUp());
 		}
 	}
 

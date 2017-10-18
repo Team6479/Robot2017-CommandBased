@@ -23,5 +23,8 @@ public class RobotMap {
 	//Gear Collector
 	public static int wheels = 3;
 	public static int yControl = 0;
+	
+	//digital input
+	public static int lSwitch = 5;
 }
  
