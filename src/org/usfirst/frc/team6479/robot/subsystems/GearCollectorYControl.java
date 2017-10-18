@@ -10,16 +10,16 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class GearCollectorYControl extends Subsystem {
 	
 	private Spark spark;
-	//wether up or down
+	//whether up or down
 	private enum Position {
 		UP, DOWN
 	}
-	//current posiuton
+	//current position
 	private Position pos;
 	
 	public GearCollectorYControl() {
 		spark = new Spark(RobotMap.yControl);
-		//default psoition
+		//default position
 		pos = Position.UP;
 	}
 	
@@ -28,29 +28,29 @@ public class GearCollectorYControl extends Subsystem {
 		setDefaultCommand(new GearYControl());
 		
 	}
-	//what psoiton it is
+	//what position it is
 	public boolean isUp() {
 		return pos == Position.UP;
 	}
 	
 	//lift the gear collector up
 	public void pickUp() {
-		//if its up, dont do it
+		//if it's up, don't do it
 		spark.set(0.4); //test
 		if(pos == Position.UP) {
 			// TODO: pick up code
 			
-			//after picked up, set posotion to UP
+			//after picked up, set position to UP
 			pos = Position.UP;
 		}
 	}
 	//drop the gear collector down
 	public void drop() {
-		//if its down, dont do it
+		//if its down, don't do it
 		if(pos == Position.DOWN) {
 			// TODO: drop code
 			
-			//after picked up, set posotion to UP
+			//after picked up, set position to UP
 			pos = Position.DOWN;
 		}
 	}
