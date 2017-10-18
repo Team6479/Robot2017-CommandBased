@@ -36,6 +36,11 @@ public class GearCollectorYControl extends Subsystem {
 	public void pickUp() {
 		spark.set(0.4);
 	}
+	
+	// lift the gear collector up at a set speed.
+	public void stayUp() {
+		spark.set(0.25);
+	}
 
 	public SpeedController getMotor() {
 		return spark;
@@ -45,8 +50,8 @@ public class GearCollectorYControl extends Subsystem {
 		spark.set(0);
 	}
 	
-	public DigitalInput getSwitch() {
-		return limitSwitch;
+	public boolean switchTriggered() {
+		return limitSwitch.get();
 	}
 
 }

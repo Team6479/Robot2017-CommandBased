@@ -19,9 +19,12 @@ public class GearStayUp extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	//if the swicth is open
-    	if(!Robot.gycont.getSwitch().get()) {
-    		Robot.gycont.pickUp();
-    	}
+    		if(!Robot.gycont.switchTriggered()) {
+    			Robot.gycont.stayUp();
+    		}
+    		else {
+    			Robot.gycont.stop();
+    		}
     }
 
     // Make this return true when this Command no longer needs to run execute()
