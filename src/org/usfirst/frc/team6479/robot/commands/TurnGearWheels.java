@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class TurnGearWheels extends Command {
 
-	private int counter;
+	//private int counter;
 
 	public TurnGearWheels() {
 		// Use requires() here to declare subsystem dependencies
@@ -18,7 +18,7 @@ public class TurnGearWheels extends Command {
 		requires(Robot.gwheels);
 		
 		//Initalization of variables
-		counter = 0;
+		//counter = 0;
 	}
 
 	// Called just before this Command runs the first time
@@ -28,11 +28,11 @@ public class TurnGearWheels extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
 		// Checks for Left Button
-		boolean lButtonValue = Robot.oi.getXboxAssist().getRawButton(5);
+		//boolean lButtonValue = Robot.oi.getXboxAssist().getRawButton(5);
 		// Checks for Right Button
-		boolean rButtonValue = Robot.oi.getXboxAssist().getRawButton(6);
+		//boolean rButtonValue = Robot.oi.getXboxAssist().getRawButton(6);
 
-		if (counter == 20) {
+		/*if (counter == 20) {
 			//If Left Button is pressed 
 			if (lButtonValue) {
 				boolean isOn = false;
@@ -53,8 +53,30 @@ public class TurnGearWheels extends Command {
 				}
 			}
 			counter = 0;
+		}*/
+		//counter++;
+		
+		//left side of the assist controller is the controller for the gear wheels
+		//up joystick goes forward, even the tiniest push will go at full power
+		//down joystick goes backward, even the tiniest push will go at full power
+		//left bumper is the enabler
+		
+		if(Robot.oi.getXboxAssist().getRawButton(5))
+		{
+			//get the joystick value and climb
+			double joystickValue = Robot.oi.getXboxAssist().getRawAxis(1);
+			//if bigger than zero, go full power
+			if(joystickValue > 0) {
+				Robot.gwheels.set(1);
+			}
+			//if less than zero, go full reverse
+			if(joystickValue < 0) {
+				Robot.gwheels.set(-1);
+			}
 		}
-		counter++;
+		else {
+			Robot.gwheels.set(0);
+		}
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

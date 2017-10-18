@@ -90,6 +90,13 @@ public class Robot extends IterativeRobot {
 		if(autoSuccess) {
 			autoLogger.closeRead();
 		}
+		
+		//stop all subsystens
+		drivetrain.stop();
+		climber.stop();
+		gwheels.stop();
+		gycont.stop();
+		
 	}
 	@Override
 	public void testPeriodic() {

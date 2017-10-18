@@ -33,4 +33,8 @@ public class Drivetrain extends Subsystem {
 	public SpeedController getRightSideMotors() {
 		return rightSide;
 	}
+	public void stop() {
+		leftSide.set(0);
+		rightSide.set(0);
+	}
 }

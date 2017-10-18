@@ -15,6 +15,8 @@ public class GearCollectorWheels extends Subsystem {
 	
 	public GearCollectorWheels() {
 		spark = new Spark(RobotMap.wheels);
+		//set the spark in reverse
+		spark.setInverted(true);
 		spark.set(0);
 	}
 	
@@ -29,6 +31,9 @@ public class GearCollectorWheels extends Subsystem {
 	}
 	public SpeedController getMotor() {
 		return spark;
+	}
+	public void stop() {
+		spark.set(0);
 	}
 	
 }  

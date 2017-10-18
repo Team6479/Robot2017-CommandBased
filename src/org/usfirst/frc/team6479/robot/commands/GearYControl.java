@@ -23,18 +23,12 @@ public class GearYControl extends Command {
 	protected void execute() {
 		boolean buttonPressed = Robot.oi.getXboxAssist().getRawButton(6);
 		
-		//control gear lift based on button
-		//this is a test below
-		if(buttonPressed){
+		if (buttonPressed) {// && Robot.gycont.isUp()) {
+			Robot.gycont.drop();
+		}
+		/*if (buttonPressed && !Robot.gycont.isUp()) {
 			Robot.gycont.pickUp();
-		}
-		
-		if (buttonPressed && Robot.gycont.isUp()) {
-			Robot.gycont.drop();
-		}
-		if (buttonPressed && !Robot.gycont.isUp()) {
-			Robot.gycont.drop();
-		}
+		}*/
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
