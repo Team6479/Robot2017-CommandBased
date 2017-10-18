@@ -9,8 +9,6 @@ import edu.wpi.first.wpilibj.command.Scheduler;
  *
  */
 public class GearYControl extends Command {
-	
-	//Hi Jacob
 
 	public GearYControl() {
 		// Use requires() here to declare subsystem dependencies
