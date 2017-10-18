@@ -22,14 +22,14 @@ public class GearStayUp extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     		//if the swicth is open
-    		if(Robot.gycont.getSwitch().get()) {
+    		if(!Robot.gycont.getSwitch().get()) {
     			Robot.gycont.pickUp();
     		}
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.oi.getXboxAssist().getRawButton(0);
+        return Robot.oi.getXboxAssist().getYButton();
     }
 
     // Called once after isFinished returns true

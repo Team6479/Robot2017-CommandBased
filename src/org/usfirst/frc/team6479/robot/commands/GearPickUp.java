@@ -58,14 +58,13 @@ public class GearPickUp extends Command {
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
-		//false when closed 
-		return !Robot.gycont.getSwitch().get();
+		return Robot.gycont.getSwitch().get();
 	}
 
 	// Called once after isFinished returns true
 	protected void end() {
 		Robot.gycont.stop();
-		//Scheduler.getInstance().add(new GearStayUp());
+		Scheduler.getInstance().add(new GearStayUp());
 	}
 
 	// Called when another command which requires one or more of the same
