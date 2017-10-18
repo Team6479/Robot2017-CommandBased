@@ -16,11 +16,6 @@ public class OI {
 	private XboxController xboxAssist = new XboxController(1);
 
 	public OI() {
-		
-		JoystickButton rightBumperDriver = new JoystickButton(xboxDriver, 6);
-		rightBumperDriver.whileHeld(new Climb());
-		
-		JoystickButton leftBumperAssist = new JoystickButton(xboxAssist, 5);
 	
 	}
 
