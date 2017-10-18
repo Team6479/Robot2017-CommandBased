@@ -17,11 +17,16 @@ public class Climb extends Command {
 	//Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
+		System.out.println("HI");
 		if(Robot.oi.getXboxDriver().getRawButton(6))
 		{
+			System.out.println("Hello");
 			//get the joystick value and climb
 			double joystickValue = Robot.oi.getXboxDriver().getRawAxis(5);
 			Robot.climber.climb(Math.abs(joystickValue));
+		}
+		else {
+			Robot.climber.climb(0);
 		}
 	}
 	//Make this return true when this Command no longer needs to run execute()
