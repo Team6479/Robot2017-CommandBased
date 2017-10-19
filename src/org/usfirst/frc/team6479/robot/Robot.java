@@ -7,6 +7,7 @@ import org.usfirst.frc.team6479.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team6479.robot.subsystems.GearCollectorWheels;
 import org.usfirst.frc.team6479.robot.subsystems.GearCollectorYControl;
 
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -42,6 +43,9 @@ public class Robot extends IterativeRobot {
 		//setup autonomous chooser in dashboard
 		SmartDashboard.putString("DB/String 9", "autonomous");
 		SmartDashboard.putBoolean("DB/Button 0", false);
+		
+		//start camera
+		CameraServer.getInstance().startAutomaticCapture();
 	}
 	@Override
 	public void autonomousInit() {

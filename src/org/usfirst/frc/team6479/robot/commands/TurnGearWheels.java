@@ -66,11 +66,11 @@ public class TurnGearWheels extends Command {
 			//get the joystick value and climb
 			double joystickValue = Robot.oi.getXboxAssist().getRawAxis(1);
 			//if bigger than zero, go full power
-			if(joystickValue > 0) {
+			if(joystickValue > 0.2) {
 				Robot.gwheels.set(1);
 			}
 			//if less than zero, go full reverse
-			if(joystickValue < 0) {
+			if(joystickValue < -0.2) {
 				Robot.gwheels.set(-1);
 			}
 		}
