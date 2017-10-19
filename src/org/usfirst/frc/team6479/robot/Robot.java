@@ -75,6 +75,11 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+		
+		if(oi.getXboxDriver().getRawButton(7) || oi.getXboxAssist().getRawButton(7)) {
+			stop();
+		}
+		
 		//log auto
 		if(learnAuto) {
 			autoLogger.log();
@@ -90,16 +95,17 @@ public class Robot extends IterativeRobot {
 		if(autoSuccess) {
 			autoLogger.closeRead();
 		}
-		
+		stop();
+	}
+	@Override
+	public void testPeriodic() {
+		LiveWindow.run();
+	}
+	public void stop() {
 		//stop all subsystens
 		drivetrain.stop();
 		climber.stop();
 		gwheels.stop();
 		gycont.stop();
-		
-	}
-	@Override
-	public void testPeriodic() {
-		LiveWindow.run();
 	}
 }
