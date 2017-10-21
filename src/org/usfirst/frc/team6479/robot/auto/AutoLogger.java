@@ -5,15 +5,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import org.usfirst.frc.team6479.robot.Robot;
-import org.usfirst.frc.team6479.robot.RobotMap;
-
 import edu.wpi.first.wpilibj.SpeedController;
 
 public class AutoLogger {
 	
-	//private static final String AUTO_FOLDER = "/home/lvuser/autonomous/";
-	private static final String AUTO_FILE = "/home/lvuser/autonomous";
+	private static final String AUTO_PATH = "/home/lvuser/";
+	//private static final String AUTO_FILE = "/home/lvuser/autonomous";
 	private SpeedController[] allMotorControllers;
 	private PrintWriter write;
 	private FileReader read;
@@ -24,8 +21,8 @@ public class AutoLogger {
 	public boolean openForWrite(String filename) {
 		try 
 		{
-			//write = new PrintWriter(AUTO_FOLDER + filename);
-			write = new PrintWriter(AUTO_FILE);
+			write = new PrintWriter(AUTO_PATH + filename);
+			//write = new PrintWriter(AUTO_FILE);
 			
 		} 
 		catch (FileNotFoundException e) 
@@ -39,8 +36,8 @@ public class AutoLogger {
 	public boolean openForRead(String filename) {
 		try 
 		{
-			//read = new FileReader(AUTO_FOLDER + filename);
-			read = new FileReader(AUTO_FILE);
+			read = new FileReader(AUTO_PATH + filename);
+			//read = new FileReader(AUTO_FILE);
 			
 		} 
 		catch (FileNotFoundException e) 
