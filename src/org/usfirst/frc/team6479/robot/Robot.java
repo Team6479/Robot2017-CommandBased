@@ -60,7 +60,7 @@ public class Robot extends IterativeRobot {
 		if(autoSuccess && isAutonomous()) {
 			boolean continueAuto = autoLogger.run();
 			//run until end of auto routine is reached, then set all motors to zero and wait until time runs out
-			if(!continueAuto) {
+			if(!continueAuto) { 
 				autoLogger.stop();
 			}
 		}
@@ -73,7 +73,7 @@ public class Robot extends IterativeRobot {
 		if(learnAuto) {
 			autoLogger = new AutoLogger(drivetrain.getLeftSideMotors(), drivetrain.getRightSideMotors(), 
 					climber.getMotor(), gwheels.getMotor(), gycont.getMotor());
-			autoSuccess = autoLogger.openForRead(SmartDashboard.getString("DB/String 9", "autonomous"));
+			autoLogger.openForWrite(SmartDashboard.getString("DB/String 9", "autonomous"));
 		}
 	}
 	@Override
