@@ -51,7 +51,7 @@ public class Robot extends IterativeRobot {
 	public void autonomousInit() {
 		//create the autoLogger
 		autoLogger = new AutoLogger(drivetrain.getLeftSideMotors(), drivetrain.getRightSideMotors(), 
-				climber.getMotor(), gwheels.getMotor(), gycont.getMotor());
+				climber.getMotor(), gycont.getMotor());
 		//open the logger at the file location in the dashboard
 		autoSuccess = autoLogger.openForRead(SmartDashboard.getString("DB/String 9", "autonomous"));
 	}
@@ -72,7 +72,7 @@ public class Robot extends IterativeRobot {
 		//if it should learn a new auto, make the logger, then open the logger
 		if(learnAuto) {
 			autoLogger = new AutoLogger(drivetrain.getLeftSideMotors(), drivetrain.getRightSideMotors(), 
-					climber.getMotor(), gwheels.getMotor(), gycont.getMotor());
+					climber.getMotor(), gycont.getMotor());
 			autoLogger.openForWrite(SmartDashboard.getString("DB/String 9", "autonomous"));
 		}
 	}

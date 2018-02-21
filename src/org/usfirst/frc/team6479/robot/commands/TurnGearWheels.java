@@ -15,6 +15,7 @@ public class TurnGearWheels extends Command {
 	public TurnGearWheels() {
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
+		
 		requires(Robot.gwheels);
 		
 		//Initalization of variables
